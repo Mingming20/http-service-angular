@@ -1,0 +1,59 @@
+
+<div>
+    <h1>Specialization Registration Form</h1>
+    <div *ngIf="submitclick">
+        <form (ngSubmit)="onSubmit(sampleForm)" #sampleForm="ngForm">
+            <fieldset class="field1">
+                <div>
+                    <legend class="legend1">
+                        <h3 class="h2t1">Personal Information Form</h3>
+                    </legend>
+                    <div *ngIf = "id">
+                        <label>ID:</label>
+                        <input type="number" class="form-control" placeholder="Fullname here..." name="id" [(ngModel)]="id2"
+                            required #id="ngModel"><br>
+                        <div *ngIf="id.invalid && (id.dirty || id.touched)" class="alert alert-danger"></div>
+                    </div>
+                    <label>Name:</label>
+                    <input type="text" class="form-control" placeholder="Fullname here..." name="name" [(ngModel)]="name2"
+                        required #name="ngModel"><br>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                        <div *ngIf="name.errors.required">
+                            Fullname is required.
+                        </div>
+                    </div>
+                    <label>Email:</label>
+                    <input type="text" class="form-control" placeholder="Email here..." name="email" type="email"
+                        [email]="true" [(ngModel)]="email2" required #email="ngModel"><br>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                        <div *ngIf="email.errors.required">
+                            Email is required.
+                        </div>
+                        <div *ngIf="email.errors.email">
+                            Email is invalid.
+                        </div>
+                    </div>
+                    <br>
+                    <label>Phone Number:</label>
+                    <input class="form-control" name="phone" placeholder="Phone# here..." [(ngModel)]="phone2"
+                        required #gender="ngModel" />
+                    <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="alert alert-danger">
+                        <div *ngIf="gender.errors.required">
+                            Phone is required.
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <button class="btn btn-success" [disabled]="!sampleForm.form.valid">{{submit}}</button>
+            </fieldset>
+            <br>
+        </form>
+    </div>
+
+    <br>
+    <div *ngIf="editclick">
+        <app-child-register (id)= "id = $event" (onsubmit)="submitclick = $event" (onedit)="editclick = $event" [registered]="info"
+            (submit)="editForm($event)"></app-child-register>
+    </div>
+
+</div>

@@ -1,0 +1,14 @@
+<fieldset>
+    <legend>Data</legend>
+    <div *ngFor="let data of infoData">
+        <label>Id:</label>
+        <p>{{data.id}}</p>
+        <label>Name:</label>
+        <p>{{data.name}}</p>
+        <label>Email:</label>
+        <p>{{data.email}}</p>
+        <label>Phone:</label>
+        <p>{{data.phone}}</p>
+    </div>
+</fieldset>
+<button  class="btn btn-success" routerLink="/dashboard">Dashboard</button>

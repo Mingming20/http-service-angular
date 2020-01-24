@@ -1,0 +1,63 @@
+table{
+    float: right;
+    border: 2px;
+    padding: 5px;
+}
+th{
+    color:darkorange;
+    font-size: 15px;
+    background-color: black;
+    text-align: center;
+}
+td{
+    color: brown;
+    background-color: snow;
+    width: 300px;
+    text-align: center;
+}
+.tdrow{
+    background-color: transparent;
+    margin-right: 15px;
+}
+.h2t1{
+    text-align: center;
+    color: fuchsia;
+    font-weight: bold;
+    font-size: 25px;
+}
+/* }
+button{
+    width: 100px;
+    background-color: gold;
+    color: brown;
+    font-size: 17px;
+    font-weight: bold;
+} */
+#button1{
+    width: 80px;
+    background-color: gold;
+    color: brown;
+    font-size: 17px;
+    font-weight: bold;
+}
+#button2{
+    background-color: gold;
+    color: brown;
+    font-size: 17px;
+    font-weight: bold; 
+}
+fieldset{
+    float: left;
+    margin-right: -20px;
+}
+#view{
+    background-color: lightgreen;
+}
+#update{
+    background-color: lightseagreen;
+}
+#delete{
+    background-color: red;
+}
+
+

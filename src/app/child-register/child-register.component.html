@@ -1,0 +1,33 @@
+
+<div>
+    <fieldset>
+        <legend class="legend1">
+            <h3 class="h2t1">List of Users</h3>
+        </legend>
+        <table class="table table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of registered;let i = index">
+                    <td>{{row.id}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.phone}}</td>
+                    <td>{{row.email}}</td>
+                    <td>
+                        <button id="view" class="btn btn-success" routerLink="/view/{{row.id}}">View</button>
+                        <button id="update" (click)="edit(row)" class="btn btn-success">Update</button>
+                        <button id="delete" (click)="delete(i)" class="btn btn-success">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="button2" class="btn btn-success" (click)="back()">Back To Registration</button>
+    </fieldset>
+</div>
